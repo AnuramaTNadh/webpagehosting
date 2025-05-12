@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Top bar styles */
+.top-bar {
+  background-color: #20576E;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-weight: normal; */
+}
+
+/* Navigation bar styles */
+.navbar {
+  background-color: #fff;
+  padding: 10px 0;
+  width:1200px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  /* font-weight: bold; */
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+.navbar a:hover {
+  color: #ddd;
+}
+/* .icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 5px;
+  vertical-align: middle;
+} */
+.icon-bg {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background-color: #0A7E8C; /* Metallic Seaweed */
+  border-radius: 50%; /* Makes it circular */
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.icon-bg svg {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  /* margin: 0 auto; */
+  margin-left: 5%;
+}
+
+.logo img {
+  height: 40px; /* Adjust based on your design */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  /* font-weight: bold; */
+}
+
+.nav-links li a:hover {
+  color: #ddd;
+}
+.hero-section {
+  width: 100%;
+  /* overflow: hidden;  */
+  height: 20%;
+}
+
+.hero-content img {
+  width: 100%;
+  height: auto;
+  /* display: block; */
+}
+.container {
+  position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute; 
+  top: 20px;
+  left: 20px;
+  /* background-color: black; */
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  align-items: center;
+  height: 600px; /* Match image height */
+  overflow: hidden;
+}
+
+.hero-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-block {
+  padding: 50px;
+  max-width: 55%; /* Prevent text from touching edges */
+  text-align: left;
+}
+
+.text-block h1 {
+  /* font-size: 4rem; */
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* .text-block p {
+  padding-top:20px;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 600px;
+  overflow: hidden;
+  direction: rtl; /* Flip layout */
+  font-weight: normal;
+}
+
+.hero-content > * {
+  direction: ltr; 
+}
+.cta-button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 24px;
+  background-color:  #0A7E8C;
+  color: white;
+  text-decoration: none;
+  /* font-weight: bold; */
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+* {
+  box-sizing: border-box;
+}
+.form_container {
+  position: absolute;
+  padding-right: 100px;
+  margin-top: 20px;
+  margin-right: 80px;
+  max-width: 460px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 10px;
+  font-weight: normal;
+  font-size: 17px;
+  text-decoration: none;
+  /* font-weight: normal; */
+}
+
+/* Full-width input fields */
+  input{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-top: 10px;
+  
+}
+
+.btn {
+  /* background-color: #04AA6D; */
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide the default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Custom checkbox style */
+.checkmark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 18px;
+  width: 18px;
+  background-color: white;
+  border: 2px solid #333;
+  border-radius: 3px;
+}
+
+/* When checkbox is checked */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #333;
+}
+
+/* Checkmark indicator (tick) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style of the checkmark */
+.checkbox-container .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.grid-container {
+  display: grid;
+  grid: 100% / auto auto auto;
+  grid-gap: 0px;
+  padding: 0px;
+}
+
+.grid-container > div {
+  background-color: whitesmoke;
+  text-align: left;
+  padding: 20px 0;
+  font-size: 30px;
+  width:100%;
+  padding:40px;
+}
+ 
+    </style>
+</head>
+<body style="width:100%;">
+  <div class="top-bar" style="
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+">
+
+  <!-- LEFT SIDE: Contact info -->
+  <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+    <span class="icon-bg">
+      <svg width="16" height="16" fill="#000" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.49 2.52.76 3.87.76a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.26 2.67.76 3.87a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+      </svg>
+    </span>
+    087 245 0049 / 01 8137811 |
+
+    <span class="icon-bg">
+      <svg width="16" height="16" fill="#000" viewBox="0 0 24 24">
+        <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8.83l8 6.96 8-6.96V18H4z"/>
+      </svg>
+    </span>
+    contact@sample.ie |
+
+    <span class="icon-bg">
+      <svg width="16" height="16" fill="#000" viewBox="0 0 24 24">
+        <path d="M12 1a11 11 0 1011 11A11.013 11.013 0 0012 1zm0 20a9 9 0 119-9 9.01 9.01 0 01-9 9zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+      </svg>
+    </span>
+    Mon–Thu: 9:00 am to 9:00 pm
+  </div>
+
+  <!-- RIGHT SIDE: Social icons -->
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <a href="#" title="Facebook" style="
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      color: #20576E;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 16px;
+    "><b>f</b></a>
+
+    <a href="#" title="Twitter" style="
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      color: #20576E;
+      
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+    "><b>t</b></a>
+
+    <a href="https://linkedin.com" target="_blank" title="LinkedIn" style="
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: #0077b5;
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+    ">in</a>
+  </div>
+</div>
+
+    
+
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="logo">
+            <img src="logos.jpg" alt="Logo">
+          </div>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Order Company</a></li>
+            <li><a href="#">Apply For Tax Rebate</a></li>
+            <li><a href="#">Blog
+
+            </a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+  <div class="hero-section">
+    <div class="hero-content">
+      <img src="download.jpg" alt="" style="height:600px; width:1500px;">
+      <div class="text-block">
+        <h1 style="font-weight: normal;line-height: 1.3;padding-top:20px;font-size: 3.3rem;font-family: Arial, Helvetica, sans-serif;">Take The Right Step For Your Business</h1>
+        <p style="font-weight: normal;line-height: 1.5;padding-top:20px;font-size: 1.3rem;font-family: Arial, Helvetica, sans-serif;">TAx Associates is a leading consultancy firm that provides simple, effective company registration, and accounting solutions to enterprises in Ireland</p>
+        <a href="#" class="cta-button">Get Started</a>
+      </div>
+      <form  class="form_container" style="padding-left: 30px;">
+        <h1 style="font-family: Arial, Helvetica, sans-serif; font-weight: normal; margin-bottom: 30px;">Apply For Tax Rebate Now</h1>
+    
+        <label style="font-family: Arial, Helvetica, sans-serif; font-weight: normal; font-size: 17px;">Name</label>
+        <input type="text" name="name" class="input" required>
+    
+        <label style="font-family: Arial, Helvetica, sans-serif; font-weight: normal;font-size: 17px;">Email ID</label>
+        <input type="mail" name="email" required class="input">
+
+        <label style="font-family: Arial, Helvetica, sans-serif; font-weight: normal;font-size: 17px;">PPS Number</label>
+        <input name="pps" required class="input" type="text">
+        <div class="terms">
+          <label class="checkbox-container">
+            <input type="checkbox" required>
+            <span class="checkmark"></span>
+           <h4 style="font-weight: normal; font-size: 18px;width:300px;" > I have read & agreed  to the authorisation and the <a href="#" style="color: rgb(46, 75, 241);">Terms and Conditions</a></h4>
+          </label>
+        </div>
+    
+        <a href="#" style="display:inline-block;margin-top:20px;padding:12px 24px;background-color:#0A7E8C;color:white;text-decoration:none;font-weight:bold;border:none;border-radius:4px;position:relative;overflow:hidden;border-radius: 20px;">
+          Apply<span style="display:inline-block;margin-left:10px;transition:margin-left 0.3s ease;">→</span>
+        </a>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="item1"><img src="startup.jpg" alt="not found" style="width:60px; height:60px;"><h5 style="margin-top: 5%;"> Start Up Services</h5>
+      <p style="font-size: 17px;font-weight: normal;max-width:100%; margin-top: 4%;">We support entrepreneurs to build their businesses by providing them with the ideal company formation legal services.</p></div>
+    <div class="item2" ><img src="finance.jpg" alt="not found" style="width:60px; height:60px;"><h5 style="margin-top: 5%;"> Finance & Accounting</h5>
+      <p style="margin-top: 4%;font-size: 17px;font-weight: normal;max-width:100%;">We provide our clients with the best in the market, accounting, and financial services to help accelerate their business growth. </p></div>
+    <div class="item3" ><img src="risk&assurance.jpg" alt="not found" style="width:60px; height:60px;"><h5 style="margin-top: 5%;"> Risk & Assurance</h5>
+      <p style="margin-top: 4%;font-size: 17px;font-weight: normal;max-width:100%;">We offer risk and assurance services for new as well as established businesses to help them reduce risks and overcome any desruption.</p></div>  
+  </div>
+
+</div>
+</body>
+</html>
